@@ -12,7 +12,6 @@ default: all
 
 include ${HALIB_DIR}/make/rules.mk
 include ${HALIB_DIR}/make/debug.mk
-include ${HALIB_DIR}/make/flash.mk
 
 APPS=$(notdir $(basename ${OBJECTS}))
 
@@ -20,7 +19,7 @@ APPS=$(notdir $(basename ${OBJECTS}))
 
 all: $(addprefix ${BIN}/, $(addsuffix .elf, ${APPS}))
 
-${BIN}/%.elf: ${BUILD}/%.o ${PORTMAPS} ${LIB_NAME} | ${BIN} 
+${BIN}/%.elf: ${BUILD}/%.o ${LIB_NAME} | ${BIN} 
 	@echo "(LD    ) $(notdir $<) -> $(notdir $@)"
 	@${CXX} ${LDFLAGS} $< -o $@ ${LDPATHS} ${LIBS}
 

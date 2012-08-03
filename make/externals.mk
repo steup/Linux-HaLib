@@ -6,13 +6,12 @@ LOGGING_LINK := ${EXT_INC}/logging
 GENDIRS      += ${EXT_INC}
 TO_DCLEAN    += ${EXT_DIR}
 
-BOOST_CFLAGS := -D__NO_STL__ \
-			    -DBOOST_NO_STDLIB_CONFIG
+BOOST_CFLAGS +=
 
 AVR_CFLAGS   += ${BOOST_CFLAGS}
 AVR_CXXFLAGS += ${BOOST_CFLAGS}
-INCLUDES     += ${EXT_INC} \
-			    ${BOOST_LINK}/compatibility/cpp_c_headers/
+INCLUDES     += ${EXT_INC}
+LIBS         += boost_system boost_chrono boost_thread
 
 .PHONY: externals boost logging
 

@@ -1,5 +1,3 @@
-include ${HALIB_DIR}/make/pmgen.mk
-include ${HALIB_DIR}/make/portmaps.mk
 include ${HALIB_DIR}/make/externals.mk
 include ${HALIB_DIR}/make/lib.mk
 

@@ -1,7 +1,7 @@
 #pragma once
 
 #define setLoggingDevice(device) 							\
-	namespace avr_halib 									\
+	namespace linux_halib 									\
 	{														\
 	namespace logging 										\
 	{														\

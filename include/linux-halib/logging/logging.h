@@ -1,10 +1,12 @@
 #pragma once
 
+#include <stdint.h>
+
 //We want to declare our own output type for the logging framework 
 #define LOGGING_DEFINE_OWN_OUTPUT_TYPE
 #include <logging/logging.h>
 
-namespace avr_halib
+namespace linux_halib
 {
 namespace object
 {
@@ -13,7 +15,7 @@ namespace object
 }
 }
 
-namespace avr_halib
+namespace linux_halib
 {
 namespace logging
 {
@@ -186,6 +188,6 @@ namespace config
 }
 }
 
-LOGGING_DEFINE_OUTPUT( ::logging::OutputLevelSwitchDisabled< avr_halib::logging::config::OutputStream > );
+LOGGING_DEFINE_OUTPUT( ::logging::OutputLevelSwitchDisabled< linux_halib::logging::config::OutputStream > );
 
 typedef ::logging::detail::Logger<>::return_type LoggingOutput;

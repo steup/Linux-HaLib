@@ -1,10 +1,11 @@
 #pragma once
 
 #include "config.h"
+#include <linux-halib/logging/loggingDevice.h>
 
 namespace platform
 {
-    using namespace ros;
+    using namespace posix;
 }
 
 setLoggingDevice( platform::LoggingDevice );

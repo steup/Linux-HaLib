@@ -1,6 +1,6 @@
 include $(dir $(abspath $(lastword ${MAKEFILE_LIST})))/../config.mk
 
-TOOL_PREFIX  ?= avr-
+TOOL_PREFIX  ?= 
 
 CC           := gcc
 ASM          ?= gcc
@@ -32,30 +32,22 @@ BIN          ?= ./bin
 BUILD        ?= ./build
 LDSCRIPTS    ?= ${HALIB_DIR}/ldscripts
 
-HALIB        := AVR
+HALIB        := LINUX
 
 include ${PLATFORM}/config.mk
 
-AVR_CFLAGS   := -mmcu=${TARGET} \
-				-DF_CPU=${CLOCK}ULL \
-				-fno-strict-aliasing \
-			    -fno-exceptions
+AVR_CFLAGS   := -fno-strict-aliasing \
+#			    -fno-exceptions
 
-AVR_ASMFLAGS := -mmcu=${TARGET} \
-				-DF_CPU=${CLOCK}ULL
-
-AVR_CXXFLAGS := -mmcu=${TARGET} \
-				-DF_CPU=${CLOCK}ULL \
-				-fno-strict-aliasing \
-			    -fno-exceptions \
+AVR_ASMFLAGS := 
+AVR_CXXFLAGS := -fno-strict-aliasing \
 			    -fno-rtti \
-				-fno-threadsafe-statics
+				-fno-threadsafe-statics \
+#			    -fno-exceptions \
 
-AVR_LDFLAGS  := -mmcu=${TARGET} \
-				-T${LDSCRIPTS}/${TARGET}.x \
-				-Wl,--gc-sections
+AVR_LDFLAGS  := -Wl,--gc-sections
 
-LIBS         += avr-halib
+LIBS         += linux-halib
 LDPATHS      += ${HALIB_DIR}/lib/${TARGET}
 ARFLAGS      := rus
 

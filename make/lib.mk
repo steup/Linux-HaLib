@@ -1,6 +1,6 @@
 LIB_DIR     := ${HALIB_DIR}/lib/${TARGET}
 LIB_BUILD   := ${HALIB_DIR}/build/${TARGET}
-LIB_NAME    := ${LIB_DIR}/libavr-halib.a
+LIB_NAME    := ${LIB_DIR}/liblinux-halib.a
 LIB_SRC_DIR := ${HALIB_DIR}/src
 LIB_SRCS    := $(wildcard ${LIB_SRC_DIR}/*.S) $(wildcard ${LIB_SRC_DIR}/*.c) $(wildcard ${LIB_SRC_DIR}/*.cpp)
 LIB_OBJECTS := $(foreach src, ${LIB_SRCS}, ${LIB_BUILD}/$(basename $(notdir ${src})).o)
